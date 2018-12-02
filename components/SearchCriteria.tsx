@@ -16,10 +16,10 @@ export class SearchCriteria extends React.Component<Props, State> {
         return (
             <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                 <Text style={styles.info}>
-                    Find Russian speakers
+                    Find __________ speakers
                 </Text>
                 <Text style={styles.info}>
-                    in New York, NY
+                    in ___________
                 </Text>
                 <View style={{width: '25%'}}>
                     <Button
