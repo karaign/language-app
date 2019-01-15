@@ -2,14 +2,15 @@ import faker from 'faker';
 
 faker.seed(69);
 
-class User {
+export class User {
     constructor(
         public name: string,
         public location: string,
         public languages: string[],
         public bio: string,
         public since: Date,
-        public avatar: string
+        public avatar: string,
+        public key: number
     ) {}
 }
 
@@ -378,11 +379,12 @@ const languages = [
 for (let i = 0; i < userCount; i++) {
     users.push(new User(
         faker.name.firstName(),
-        faker.fake("{{location.city}}, {{location.country}}"),
+        faker.fake("{{address.city}}, {{address.country}}"),
         [faker.random.arrayElement(languages), faker.random.arrayElement(languages)],
         faker.lorem.sentences(2),
         faker.date.recent(120),
-        faker.image.avatar()
+        faker.image.avatar(),
+        i
     ));
 }
 
